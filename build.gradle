@@ -1,0 +1,47 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.1.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'com'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+	maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+
+	implementation 'org.springframework.boot:spring-boot-starter'
+	compile group: 'org.springframework', name: 'spring-web', version: '5.2.7.RELEASE'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+
+	implementation group: 'com.github.fge', name: 'jackson-coreutils', version: '1.8'
+	implementation group: 'com.github.fge', name: 'json-schema-validator', version: '2.2.6'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	implementation 'com.google.code.gson:gson:2.8.6'
+
+
+	implementation("com.opencsv:opencsv:4.0")
+
+
+	implementation group: 'org.leadpony.justify', name: 'justify', version: '3.0.0-RC2'
+//    implementation 'org.glassfish:jakarta.json:2.0.0-RC2:module'
+	runtimeOnly 'org.leadpony.joy:joy-classic:2.0.0-RC2'
+
+	// https://mvnrepository.com/artifact/org.glassfish/jakarta.json
+	implementation group: 'org.glassfish', name: 'jakarta.json', version: '2.0.0-RC2'
+	implementation 'com.github.everit-org.json-schema:org.everit.json.schema:1.12.1'
+}
+
+test {
+	useJUnitPlatform()
+}
