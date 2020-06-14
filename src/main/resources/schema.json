@@ -637,6 +637,7 @@
           ],
           "additionalItems": true,
           "items": {
+              "anyOf": [],
               "$id": "#/properties/data/properties/relatedReports/items"
           }
         },
